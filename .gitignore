@@ -39,6 +39,9 @@ yarn-error.log*
 # EasyNext
 .easynext
 
+# Vooster AI
+.vooster
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
