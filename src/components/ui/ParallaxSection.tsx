@@ -81,7 +81,7 @@ export const ScrollProgressBar: React.FC<ScrollProgressBarProps> = ({
 };
 
 interface StickyScrollSectionProps {
-  children: React.ReactNode;
+  children: React.ReactElement<{ scrollYProgress?: MotionValue<number> }>;
   className?: string;
   height?: string;
 }
@@ -100,7 +100,7 @@ export const StickyScrollSection: React.FC<StickyScrollSectionProps> = ({
   return (
     <div ref={targetRef} className={className} style={{ height }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        {React.cloneElement(children as React.ReactElement, { scrollYProgress })}
+        {React.cloneElement(children, { scrollYProgress } as any)}
       </div>
     </div>
   );
