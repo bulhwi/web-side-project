@@ -58,7 +58,7 @@ export const FaqAccordion: React.FC = () => {
                 className="pb-4 pt-0 px-6"
                 style={{
                   color: designTokens.colors.grayscale.gray500,
-                  fontSize: designTokens.typography.fontSizes.md,
+                  fontSize: designTokens.typography.fontSizes.base,
                   fontFamily: designTokens.typography.fontFamilies.body,
                   lineHeight: '1.6',
                 }}
