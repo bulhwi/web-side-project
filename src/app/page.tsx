@@ -9,7 +9,7 @@ import { StylizedImage } from '@/components/ui/StylizedImage'
 import { Testimonial } from '@/components/ui/Testimonial'
 import { ContactSection } from '@/components/ui/ContactSection'
 
-// 통계 섹션 (Clients 대신)
+// 통계 섹션
 function Achievements() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
@@ -64,7 +64,7 @@ function Achievements() {
   )
 }
 
-// 치료 사례 섹션 (CaseStudies 대신)
+// 치료 사례 섹션
 function TreatmentCases() {
   const cases = [
     {
@@ -72,21 +72,21 @@ function TreatmentCases() {
       patient: '김○○ 님',
       duration: '3개월',
       description: '10년간 지속된 만성 요통이 추나 요법과 침구 치료로 완전히 개선되었습니다.',
-      imageUrl: 'https://picsum.photos/400/300?random=case1'
+      imageUrl: 'https://picsum.photos/seed/case1/400/300'
     },
     {
       title: '디스크 통증 개선',
       patient: '이○○ 님',
       duration: '2개월',
       description: '허리 디스크로 인한 극심한 통증이 한약 치료와 추나 요법으로 호전되었습니다.',
-      imageUrl: 'https://picsum.photos/400/300?random=case2'
+      imageUrl: 'https://picsum.photos/seed/case2/400/300'
     },
     {
       title: '오십견 치료',
       patient: '박○○ 님',
       duration: '4개월',
       description: '어깨가 굳어 일상생활이 불편했던 오십견이 침구 치료로 완치되었습니다.',
-      imageUrl: 'https://picsum.photos/400/300?random=case3'
+      imageUrl: 'https://picsum.photos/seed/case3/400/300'
     },
   ]
 
@@ -156,7 +156,7 @@ function Services() {
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
             <FadeIn className="w-135 flex-none lg:w-180">
               <StylizedImage
-                src="https://picsum.photos/800/600?random=acupuncture"
+                src="https://picsum.photos/seed/acupuncture/800/600"
                 width={800}
                 height={600}
                 sizes="(min-width: 1024px) 41rem, 31rem"
@@ -188,6 +188,197 @@ function Services() {
   )
 }
 
+// 의료진 섹션
+function MedicalTeam() {
+  const doctors = [
+    {
+      name: '김한의 원장',
+      specialty: '척추·관절 전문',
+      experience: '20년 이상 임상 경력',
+      description: '대한한의사협회 정회원, 척추·관절 질환 전문 치료',
+      imageUrl: 'https://picsum.photos/seed/doctor1/300/400'
+    },
+    {
+      name: '이한의 원장',
+      specialty: '내과·체질 전문',
+      experience: '15년 이상 임상 경력',
+      description: '사상체질 전문, 내과 질환 및 만성질환 치료',
+      imageUrl: 'https://picsum.photos/seed/doctor2/300/400'
+    },
+    {
+      name: '박한의 원장',
+      specialty: '통증·재활 전문',
+      experience: '18년 이상 임상 경력',
+      description: '통증 치료 및 재활 전문, 추나 요법 전문의',
+      imageUrl: 'https://picsum.photos/seed/doctor3/300/400'
+    },
+  ]
+
+  return (
+    <>
+      <SectionIntro
+        eyebrow="의료진"
+        title="풍부한 경험의 전문 한의사"
+        className="mt-24 sm:mt-32 lg:mt-40"
+      >
+        <p>
+          각 분야의 전문성을 갖춘 한의사들이 최상의 치료를 제공합니다.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <FadeInStagger className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {doctors.map((doctor) => (
+            <FadeIn key={doctor.name}>
+              <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+                <Image
+                  src={doctor.imageUrl}
+                  alt={doctor.name}
+                  width={300}
+                  height={400}
+                  className="h-96 w-full object-cover transition duration-300 group-hover:scale-105"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="font-display text-2xl font-semibold">{doctor.name}</p>
+                  <p className="mt-2 text-sm font-semibold text-neutral-300">{doctor.specialty}</p>
+                  <p className="mt-1 text-sm text-neutral-400">{doctor.experience}</p>
+                  <p className="mt-3 text-sm text-neutral-300">{doctor.description}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </FadeInStagger>
+      </Container>
+    </>
+  )
+}
+
+// 차별화 요소 섹션
+function DifferentiatingFactors() {
+  return (
+    <div className="mt-24 sm:mt-32 lg:mt-40">
+      <SectionIntro
+        eyebrow="차별화 요소"
+        title="BD 한의원만의 특별함"
+      >
+        <p>
+          최첨단 장비와 전통 한의학의 조화로 최상의 치료 효과를 제공합니다.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <FadeInStagger faster>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <FadeIn>
+              <div className="rounded-3xl bg-neutral-950 p-8 lg:p-12">
+                <h3 className="font-display text-2xl font-semibold text-white">
+                  1:1 맞춤 진료
+                </h3>
+                <p className="mt-4 text-base text-neutral-300">
+                  충분한 상담 시간을 통해 환자 개개인의 체질과 증상을 정확히 파악하고,
+                  최적의 치료 계획을 수립합니다.
+                </p>
+                <ul className="mt-6 space-y-3 text-sm text-neutral-400">
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>30분 이상 충분한 초진 상담</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>체질 맞춤형 치료 계획</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>정기적인 치료 경과 체크</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <div className="rounded-3xl bg-neutral-950 p-8 lg:p-12">
+                <h3 className="font-display text-2xl font-semibold text-white">
+                  최첨단 장비
+                </h3>
+                <p className="mt-4 text-base text-neutral-300">
+                  전통 한의학과 현대 의료 장비의 완벽한 조화로
+                  정확한 진단과 효과적인 치료를 제공합니다.
+                </p>
+                <ul className="mt-6 space-y-3 text-sm text-neutral-400">
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>체열 진단 시스템</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>척추 분석 장비</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>첨단 추나 치료 베드</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <div className="rounded-3xl bg-neutral-950 p-8 lg:p-12">
+                <h3 className="font-display text-2xl font-semibold text-white">
+                  한약 품질 관리
+                </h3>
+                <p className="mt-4 text-base text-neutral-300">
+                  GMP 인증 한약재만을 사용하며, 엄격한 품질 관리를 통해
+                  안전하고 효과적인 한약을 제공합니다.
+                </p>
+                <ul className="mt-6 space-y-3 text-sm text-neutral-400">
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>GMP 인증 한약재</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>당일 조제 원칙</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>개인 맞춤 처방</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <div className="rounded-3xl bg-neutral-950 p-8 lg:p-12">
+                <h3 className="font-display text-2xl font-semibold text-white">
+                  체계적 사후 관리
+                </h3>
+                <p className="mt-4 text-base text-neutral-300">
+                  치료 후에도 지속적인 관리를 통해 재발을 방지하고
+                  건강한 생활 습관을 유지할 수 있도록 돕습니다.
+                </p>
+                <ul className="mt-6 space-y-3 text-sm text-neutral-400">
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>생활 습관 개선 가이드</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>자가 관리 운동법 교육</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">✓</span>
+                    <span>정기 검진 시스템</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </FadeInStagger>
+      </Container>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <RootLayout>
@@ -206,13 +397,17 @@ export default function Home() {
 
       <Achievements />
 
+      <MedicalTeam />
+
+      <DifferentiatingFactors />
+
       <TreatmentCases />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{
           name: '김○○ 환자',
-          logo: 'https://via.placeholder.com/150x50/000000/FFFFFF/?text=BD+한의원'
+          logo: 'https://picsum.photos/seed/logo/150/50'
         }}
       >
         10년 넘게 고생했던 만성 요통이 추나 요법과 침구 치료로 완전히 나았습니다.
