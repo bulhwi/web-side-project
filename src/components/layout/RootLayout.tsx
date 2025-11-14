@@ -13,7 +13,7 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 import { Container } from '@/components/layout/Container'
-import { AppleFooter } from '@/components/layout/AppleFooter'
+import { Footer } from '@/components/layout/Footer'
 import { GridPattern } from '@/components/ui/GridPattern'
 
 const RootLayoutContext = createContext<{
@@ -225,7 +225,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
 
           <main className="w-full flex-auto">{children}</main>
 
-          <AppleFooter />
+          <Footer />
         </motion.div>
       </motion.div>
     </MotionConfig>
