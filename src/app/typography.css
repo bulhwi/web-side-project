@@ -1,10 +1,11 @@
 /* Studio 타이포그래피 */
 .font-display {
-  font-family: var(--font-family-display);
+  font-family: var(--font-display);
+  font-variation-settings: var(--font-display--font-variation-settings);
 }
 
-.font-body {
-  font-family: var(--font-family-body);
+.font-sans {
+  font-family: var(--font-sans);
 }
 
 /* 한글 최적화 */
