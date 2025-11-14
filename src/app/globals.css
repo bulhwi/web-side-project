@@ -38,9 +38,9 @@
   --width-135: 33.75rem;
   --width-180: 45rem;
 
-  /* Apple System Fonts */
-  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  /* System Fonts */
+  --font-family-display: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
 
   /* Apple Colors - Primary */
   --color-system-blue: #007AFF;
