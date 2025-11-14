@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "SF Pro Display";
+  font-weight: 100 900;
+  font-display: swap;
+  src: local("SF Pro Display");
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-weight: 100 900;
+  font-display: swap;
+  src: local("SF Pro Text");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
