@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue, useReducedMotion } from 'framer-motion';
 
 interface ParallaxSectionProps {
   children: React.ReactNode;
@@ -23,6 +23,7 @@ export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
   overlayOpacity = 0.4
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start']
@@ -31,7 +32,9 @@ export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    direction === 'up' ? ['0%', `-${speed * 100}%`] : ['0%', `${speed * 100}%`]
+    shouldReduceMotion
+      ? ['0%', '0%']
+      : direction === 'up' ? ['0%', `-${speed * 100}%`] : ['0%', `${speed * 100}%`]
   );
 
   return (

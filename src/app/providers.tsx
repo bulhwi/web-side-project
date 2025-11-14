@@ -8,6 +8,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import { ThemeProvider } from 'next-themes';
+import { MotionConfig, useReducedMotion } from 'framer-motion';
 
 function makeQueryClient() {
   return new QueryClient({
@@ -43,6 +44,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   //       suspend because React will throw away the client on the initial
   //       render if it suspends and there is no boundary
   const queryClient = getQueryClient();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <ThemeProvider
@@ -51,7 +53,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <MotionConfig
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }}
+        >
+          {children}
+        </MotionConfig>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }
