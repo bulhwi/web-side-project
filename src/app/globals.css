@@ -3,7 +3,6 @@
 @import './typography.css' layer(components);
 
 @theme {
-  /* Typography - Studio 템플릿과 동일 */
   --text-*: initial;
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
@@ -28,47 +27,17 @@
   --text-7xl: 4rem;
   --text-7xl--line-height: 4.5rem;
 
-  /* Border Radius */
   --radius-4xl: 2.5rem;
 
-  /* Aspect Ratios */
-  --aspect-ratio-719/680: 719 / 680;
+  --font-sans:
+    Mona Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  /* Custom Widths */
-  --width-132: 33rem;
-  --width-135: 33.75rem;
-  --width-180: 45rem;
+  --font-display:
+    Mona Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  /* System Fonts - Studio 스타일 */
-  --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-display: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-display--font-variation-settings: 'wdth' 125;
+
   --font-display-length: 2;
-
-  /* Apple Colors - Primary */
-  --color-system-blue: #007AFF;
-  --color-system-green: #34C759;
-  --color-system-orange: #FF9500;
-  --color-system-red: #FF3B30;
-
-  /* Apple Colors - Grayscale */
-  --color-system-gray: #8E8E93;
-  --color-system-gray-2: #AEAEB2;
-  --color-system-gray-3: #C7C7CC;
-  --color-system-gray-4: #D1D1D6;
-  --color-system-gray-5: #E5E5EA;
-  --color-system-gray-6: #F2F2F7;
-
-  /* Studio Neutral (다크 모드 대비) */
-  --color-neutral-50: #FAFAFA;
-  --color-neutral-100: #F5F5F5;
-  --color-neutral-200: #E5E5E5;
-  --color-neutral-600: #525252;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0A0A0A;
-
-  /* 한의원 브랜드 컬러 */
-  --color-brand-primary: var(--color-system-green);
-  --color-brand-secondary: var(--color-system-blue);
 }
