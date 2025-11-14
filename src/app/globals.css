@@ -30,6 +30,14 @@
   /* Border Radius */
   --radius-4xl: 2.5rem;
 
+  /* Aspect Ratios */
+  --aspect-ratio-719/680: 719 / 680;
+
+  /* Custom Widths */
+  --width-132: 33rem;
+  --width-135: 33.75rem;
+  --width-180: 45rem;
+
   /* Apple System Fonts */
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
