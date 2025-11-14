@@ -1,25 +1,17 @@
-import React from 'react';
-import { AppleHeader } from '@/components/layout/AppleHeader';
-import { AppleFooter } from '@/components/layout/AppleFooter';
-import { AppleHeroSection } from '@/components/sections/AppleHeroSection';
-import { AppleServicesSection } from '@/components/sections/AppleServicesSection';
-import { TechnologySection } from '@/components/sections/TechnologySection';
-import { FaqSection } from '@/components/sections/FaqSection';
-import { ScrollProgressBar } from '@/components/ui/ParallaxSection';
-import { designTokens } from '@/theme/designTokens';
+import React from 'react'
+import { RootLayout } from '@/components/layout/RootLayout'
+import { AppleHeroSection } from '@/components/sections/AppleHeroSection'
+import { AppleServicesSection } from '@/components/sections/AppleServicesSection'
+import { TechnologySection } from '@/components/sections/TechnologySection'
+import { FaqSection } from '@/components/sections/FaqSection'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: designTokens.colors.systemBackground }}>
-      <ScrollProgressBar />
-      <AppleHeader />
-      <main>
-        <AppleHeroSection />
-        <AppleServicesSection />
-        <TechnologySection />
-        <FaqSection />
-      </main>
-      <AppleFooter />
-    </div>
-  );
+    <RootLayout>
+      <AppleHeroSection />
+      <AppleServicesSection />
+      <TechnologySection />
+      <FaqSection />
+    </RootLayout>
+  )
 }
