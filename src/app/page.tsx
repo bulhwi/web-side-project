@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import { Container } from '@/components/layout/Container'
-import { FadeIn } from '@/components/ui/FadeIn'
+import { FadeIn, FadeInStagger } from '@/components/ui/FadeIn'
 import { RootLayout } from '@/components/layout/RootLayout'
 import { SectionIntro } from '@/components/ui/SectionIntro'
 import { List, ListItem } from '@/components/ui/List'
 import { StylizedImage } from '@/components/ui/StylizedImage'
+import { Testimonial } from '@/components/ui/Testimonial'
+import { ContactSection } from '@/components/ui/ContactSection'
 
 export default function Home() {
   return (
@@ -21,6 +23,46 @@ export default function Home() {
           </p>
         </FadeIn>
       </Container>
+
+      {/* Achievements Section */}
+      <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+        <Container>
+          <FadeIn className="flex items-center gap-x-8">
+            <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
+              20년 이상의 임상 경험으로 검증된 치료
+            </h2>
+            <div className="h-px flex-auto bg-neutral-800" />
+          </FadeIn>
+          <FadeInStagger faster>
+            <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
+              <FadeIn>
+                <div className="text-center">
+                  <p className="font-display text-4xl font-semibold text-white">20+</p>
+                  <p className="mt-2 text-sm text-neutral-400">년 경력</p>
+                </div>
+              </FadeIn>
+              <FadeIn>
+                <div className="text-center">
+                  <p className="font-display text-4xl font-semibold text-white">10,000+</p>
+                  <p className="mt-2 text-sm text-neutral-400">치료 케이스</p>
+                </div>
+              </FadeIn>
+              <FadeIn>
+                <div className="text-center">
+                  <p className="font-display text-4xl font-semibold text-white">98%</p>
+                  <p className="mt-2 text-sm text-neutral-400">환자 만족도</p>
+                </div>
+              </FadeIn>
+              <FadeIn>
+                <div className="text-center">
+                  <p className="font-display text-4xl font-semibold text-white">100%</p>
+                  <p className="mt-2 text-sm text-neutral-400">한의사 전문의</p>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeInStagger>
+        </Container>
+      </div>
 
       {/* Services Section */}
       <SectionIntro
@@ -67,6 +109,21 @@ export default function Home() {
           </List>
         </div>
       </Container>
+
+      {/* Testimonial Section */}
+      <Testimonial
+        className="mt-24 sm:mt-32 lg:mt-40"
+        client={{
+          name: '김○○ 환자',
+          logo: 'https://via.placeholder.com/150x50/000000/FFFFFF/?text=BD+한의원'
+        }}
+      >
+        10년 넘게 고생했던 만성 요통이 추나 요법과 침구 치료로 완전히 나았습니다.
+        BD 한의원의 체계적인 치료와 세심한 관리에 진심으로 감사드립니다.
+      </Testimonial>
+
+      {/* Contact Section */}
+      <ContactSection />
     </RootLayout>
   )
 }
