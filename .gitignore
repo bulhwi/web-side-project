@@ -42,6 +42,10 @@ yarn-error.log*
 # Vooster AI
 .vooster
 
+# Tailwind Studio Template (reference only, should not be committed)
+/tailwind-template
+/tailwind-plus-studio
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
